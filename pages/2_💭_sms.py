@@ -13,7 +13,7 @@ import csv
 import random
 import time
 
-SLEEP_TIME = random.randint(120,500)
+SLEEP_TIME = 150
 
 st.title("Send sms 💭")
 
@@ -70,14 +70,6 @@ class main():
                     time.sleep(SLEEP_TIME)
                 except PeerFloodError:
                     st.write("Getting Flood Error from telegram. Script is stopping now.")
-                    receiver = InputPeerUser(api_id, api_hash)
-                    client.send_message(receiver, message, parse_mode='html')
-                    st.write("Please try again after some time.")
-                    
-                    message = " Getting Flood Error from telegram. Script is stopping now., Please try again after some time. "
-                    receiver = InputPeerUser(api_id, api_hash)
-                    client.send_message(receiver, message, parse_mode='html')
-
                     client.disconnect()
                     sys.exit()
                 except Exception as e:
