@@ -70,6 +70,7 @@ class main():
                     time.sleep(SLEEP_TIME)
                 except PeerFloodError:
                     st.write("Getting Flood Error from telegram. Script is stopping now.")
+                    st.write("Please try again after some time.")
                     client.disconnect()
                     sys.exit()
                 except Exception as e:
