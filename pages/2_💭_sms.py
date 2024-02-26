@@ -62,7 +62,7 @@ class main():
                     continue
                 receiver = client.get_input_entity(user['username'])
                 try:
-                    with st.spinner("Sending Message to:", user['name']):
+                    with st.spinner(f"Sending Message to:{user['name']}"):
                         client.send_message(receiver, message.format(user['name']))
                     def timess_s():
                         time_s = random.randrange(120,500)
