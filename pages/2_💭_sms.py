@@ -62,10 +62,11 @@ class main():
                     continue
                 receiver = client.get_input_entity(user['username'])
                 try:
-                    with st.spinner(f"Sending Message to:{user['name']}"):
+                    st.write("Sending Message to:", user['name'])
+                    with st.spinner("Sending Message"):
                         client.send_message(receiver, message.format(user['name']))
                     def timess_s():
-                        time_s = random.randrange(120,500)
+                        time_s = random.randrange(120,300)
                         return time_s
                         
                     SLEEP_TIME = timess_s()
